@@ -197,3 +197,4 @@ An alert should trigger once 20 unique ports are contacted within 10 seconds.
 
 This tool is intended for educational purposes only.
 Do not use it to monitor networks without proper authorization.
+Always ensure you have explicit permission before monitoring any network traffic.
