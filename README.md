@@ -24,7 +24,7 @@ Mini-IDS captures TCP packets and monitors SYN flags to identify potential scann
 
 For each source IP address, the system tracks how many unique destination ports are contacted within a configurable time window.
 
-If the number exceeds a defined threshold, an alert is generated.
+If the number exceeds a defined threshold, an alert is generated. A cooldown prevents repeated alerts for the same source IP within the same time window.
 
 **Default configuration:**
 
@@ -188,6 +188,7 @@ An alert should trigger once 20 unique ports are contacted within 10 seconds.
 - Rule-based detection only (no machine learning)
 - No deep packet inspection
 - TCP-focused detection
+- Packet timestamps use the system clock (`time.time()`) rather than the wire arrival time, so there may be minor drift under high traffic
 - Intended for educational and local monitoring use
 
 ---
